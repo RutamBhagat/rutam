@@ -1,0 +1,204 @@
+{
+  "common": {
+    "siteTitle": "Rutam",
+    "siteTitleSuffix": ".dev"
+  },
+  "nav": {
+    "about": "About",
+    "project": "Project",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "It's Rutam Bhagat",
+    "rolePrefix": "A",
+    "role": "Software",
+    "roleSuffix": "Engineer",
+    "description": "Passionate and detail-oriented software developer with a knack for creating visually appealing and user-friendly web interfaces",
+    "tagline": "Where creativity meets functionality.",
+    "contactButton": "Contact Me",
+    "contactButtonAriaLabel": "Contact Me"
+  },
+  "about": {
+    "sectionTitle": "Simplicity is the soul of efficiency.",
+    "heading": "About me",
+    "description": "With over 3 years of experience as a fullstack ai developer, I specialize in crafting responsive and user-friendly web applications. I excel in creating intuitive interfaces and enjoy working in collaborative, agile environments.",
+    "stats": {
+      "experiences": "Experiences",
+      "completedProjects": "Completed Projects",
+      "contributions": "Contributions"
+    },
+    "techStack": {
+      "typescript": "TypeScript",
+      "react": "React",
+      "next": "Next",
+      "javascript": "JavaScript",
+      "tailwind": "Tailwind"
+    }
+  },
+  "projects": {
+    "heading": "Featured Projects",
+    "quote1": "Good design is obvious. Great design is transparent.",
+    "quote2": "Design is not for philosophy, it's for life.",
+    "exploreMore": "Explore more projects in",
+    "myGithubProfile": "my github profile",
+    "items": {
+      "fermionAssignment": {
+        "title": "Google Meet SFU",
+        "description": "WebRTC video conferencing with Mediasoup SFU plus live HLS streaming and DVR via FFmpeg.",
+        "techStacks": [
+          "WebRTC",
+          "Mediasoup",
+          "FFmpeg"
+        ],
+        "image": "/assets/projects/google-meet-sfu.png",
+        "githubURL": "https://github.com/RutamBhagat/fermion-task",
+        "liveURL": "https://fermion-task-web.vercel.app/stream",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/fermion-task"
+      },
+      "autoExtract": {
+        "title": "AutoExtract",
+        "description": "Invoice manager that extracts data from PDFs, images, and Excel using Google Gemini with real-time state sync.",
+        "techStacks": [
+          "Next.js",
+          "Gemini",
+          "Zustand"
+        ],
+        "image": "https://github.com/user-attachments/assets/5b279dee-3d6c-4f91-932d-e0621b404c32",
+        "githubURL": "https://github.com/RutamBhagat/swipe-assignment",
+        "liveURL": "https://swipe-assignment-five.vercel.app/",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/swipe-assignment"
+      },
+      "codeWizard": {
+        "title": "Code Wizard",
+        "description": "LangChain documentation chatbot with retrieval via LangGraph and a FastAPI backend for grounded answers.",
+        "techStacks": [
+          "Next.js",
+          "LangChain",
+          "FastAPI"
+        ],
+        "image": "https://github.com/user-attachments/assets/85720540-b534-4907-bfe3-da125306e684",
+        "githubURL": "https://github.com/RutamBhagat/code_wizard_frontend",
+        "liveURL": "https://code-wizard-frontend.vercel.app/",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/code_wizard_frontend"
+      },
+      "vectorShift": {
+        "title": "VectorShift",
+        "description": "Node-based workflow builder with ReactFlow and FastAPI pipeline validation for DAGs.",
+        "techStacks": [
+          "React",
+          "ReactFlow",
+          "FastAPI"
+        ],
+        "image": "https://github.com/user-attachments/assets/ea8464d2-580f-4a19-a263-504f148d93c7",
+        "githubURL": "https://github.com/RutamBhagat/vectorshift_task",
+        "liveURL": "https://vectorshift-task.vercel.app/",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/vectorshift_task"
+      },
+      "talkSpark": {
+        "title": "TalkSpark",
+        "description": "AI conversation starter that analyzes social profiles to generate personalized icebreakers using LangGraph and LangChain.",
+        "techStacks": [
+          "Next.js",
+          "LangGraph",
+          "FastAPI"
+        ],
+        "image": "https://github.com/user-attachments/assets/158c009a-94e0-4bdb-bb72-f87886b30edd",
+        "githubURL": "https://github.com/RutamBhagat/talk_spark_frontend",
+        "liveURL": "https://talk-spark-frontend.vercel.app/",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/talk_spark_frontend"
+      },
+      "brochureCraft": {
+        "title": "BrochureCraft",
+        "description": "AI tool that generates professional brochures and instant summaries from any webpage using Next.js, FastAPI, and OpenAI.",
+        "techStacks": [
+          "Next.js",
+          "FastAPI",
+          "OpenAI"
+        ],
+        "image": "https://github.com/user-attachments/assets/c9aae5ef-13e8-4227-96d9-51d462a256be",
+        "githubURL": "",
+        "liveURL": "https://website-summarizer-frontend.vercel.app",
+        "githubApi": ""
+      },
+      "codeAntAi": {
+        "title": "CodeAnt AI",
+        "description": "Frontend assessment implementing Figma-driven UI using the T3 stack with clean, responsive layouts.",
+        "techStacks": [
+          "Next.js",
+          "TypeScript",
+          "T3"
+        ],
+        "image": "https://github.com/user-attachments/assets/edfc6496-c85a-4dcc-850e-c8b98d6e89d2",
+        "githubURL": "https://github.com/RutamBhagat/code-ant",
+        "liveURL": "https://code-ant-two.vercel.app/login",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/code-ant"
+      },
+      "audiophile": {
+        "title": "Audiophile",
+        "description": "Premium audio e-commerce site with responsive layouts, cart management, and a full checkout flow.",
+        "techStacks": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind"
+        ],
+        "image": "https://github.com/user-attachments/assets/80f32a0f-65a8-44da-a7c0-82909696a2ea",
+        "githubURL": "https://github.com/RutamBhagat/audiophile-ecom",
+        "liveURL": "https://audiophile-ecom-eight.vercel.app",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/audiophile-ecom"
+      },
+      "designo": {
+        "title": "Designo",
+        "description": "Multi-page agency site with responsive layouts, contact form validation, and Leaflet location maps.",
+        "techStacks": [
+          "Next.js",
+          "Tailwind",
+          "Leaflet"
+        ],
+        "image": "https://github.com/user-attachments/assets/dcb64d1d-9a96-44f3-8607-0087adc06bc0",
+        "githubURL": "https://github.com/RutamBhagat/Designo-Multi-page-Agency-Website",
+        "liveURL": "https://designo-red.vercel.app/",
+        "githubApi": "https://api.github.com/repos/RutamBhagat/Designo-Multi-page-Agency-Website"
+      }
+    }
+  },
+  "contact": {
+    "question": "Want to collaborate?",
+    "cta": "Contact me!",
+    "linkedin": "Linkedin",
+    "twitter": "Twitter",
+    "github": "Github",
+    "email": "Email",
+    "cal": "Cal.com",
+    "name": "Rutam Bhagat",
+    "role": "Builder, Developer & Perfectionist",
+    "description": "I'm always excited to connect with like-minded professionals and potential collaborators. Whether you have a project in mind, need assistance, or just want to say hello, feel free to reach out!",
+    "footer": "Made with ❤️ by Rutam Bhagat",
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/shinn-thant-b90533231",
+      "twitter": "https://x.com/rutamstwt",
+      "github": "https://github.com/RutamBhagat",
+      "email": "mailto:rutambhagat@gmail.com",
+      "cal": "https://cal.com/rutam-bhagat-rutamstwt-uocefl",
+      "icons": {
+        "github": "/assets/socials/github.svg",
+        "linkedin": "/assets/socials/linkedin.svg",
+        "twitter": "/assets/socials/twitter.svg"
+      }
+    }
+  },
+  "resume": {
+    "buttonText": "Resume",
+    "link": "/assets/resume_rutam_bhagat.pdf"
+  },
+  "aria": {
+    "heroBackground": "Hero Background Illustration",
+    "contactMe": "Contact Me",
+    "exploreGithub": "Expore more in my github profile",
+    "contactLinkedin": "Contact me on linkedin",
+    "contactTwitter": "Contact me on Twitter",
+    "contactGithub": "Contact me on Github",
+    "contactEmail": "Contact me via Email",
+    "contactCal": "Book time with me",
+    "followMedium": "Follow up on my medium account"
+  }
+}
