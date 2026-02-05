@@ -74,7 +74,7 @@ export default function AboutSection() {
           )
 
           tl.to(q(".experience-count"), {
-            innerText: 3,
+            innerText: 2,
             duration: 0.5,
             snap: {
               innerText: 1,
