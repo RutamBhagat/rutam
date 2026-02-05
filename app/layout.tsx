@@ -16,7 +16,6 @@ export const metadata: Metadata = {
   applicationName: "Portfolio",
   openGraph: {
     type: "website",
-    url: "https://devrutam.vercel.app/",
     title: "Rutam.Dev",
     description:
       "Portfolio website developed with NextJS, TypeScript, ShadcnUI & GSAP.",
@@ -32,9 +31,7 @@ export const metadata: Metadata = {
     title: "Rutam.Dev",
     description:
       "Portfolio website developed with NextJS, TypeScript, ShadcnUI & GSAP.",
-    images: [
-      "/link-preview.png",
-    ],
+    images: ["/link-preview.png"],
   },
   authors: {
     name: "Rutam Bhagat",
