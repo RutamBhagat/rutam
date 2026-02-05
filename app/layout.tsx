@@ -23,8 +23,17 @@ export const metadata: Metadata = {
     siteName: "Portfolio website",
     images: [
       {
-        url: "https://i.ibb.co/m5bYtw6/responsive-showcase.png",
+        url: "https://www.nicepng.com/png/detail/194-1948525_team-instinct-logo-png.png",
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rutam.Dev",
+    description:
+      "Portfolio website developed with NextJS, TypeScript, ShadcnUI & GSAP.",
+    images: [
+      "https://www.nicepng.com/png/detail/194-1948525_team-instinct-logo-png.png",
     ],
   },
   authors: {
