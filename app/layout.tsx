@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio website",
     images: [
       {
-        url: "https://www.nicepng.com/png/detail/194-1948525_team-instinct-logo-png.png",
+        url: "/link-preview.png",
       },
     ],
   },
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description:
       "Portfolio website developed with NextJS, TypeScript, ShadcnUI & GSAP.",
     images: [
-      "https://www.nicepng.com/png/detail/194-1948525_team-instinct-logo-png.png",
+      "/link-preview.png",
     ],
   },
   authors: {
