@@ -10,6 +10,7 @@ import {
   SITE_DESCRIPTION,
   TWITTER_HANDLE,
 } from '@/lib/constants'
+import { EDUCATION, SOCIAL_LINKS, WORK_EXPERIENCE } from './data'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     'React Developer',
     'TypeScript',
     'Portfolio',
-    'Dibas Borborah',
+    'Rutam Bhagat',
     'Software Engineer',
     'Web Development',
   ],
@@ -89,6 +90,7 @@ const geistMono = Geist_Mono({
 
 // JSON-LD Structured Data for Person
 function PersonJsonLd() {
+  const currentWork = WORK_EXPERIENCE[0]
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -98,25 +100,16 @@ function PersonJsonLd() {
     jobTitle: 'Full Stack Engineer',
     worksFor: {
       '@type': 'Organization',
-      name: 'Mavic AI',
-      url: 'https://www.mavic.ai/',
+      name: currentWork.company,
+      url: currentWork.link,
     },
-    alumniOf: [
-      {
-        '@type': 'EducationalOrganization',
-        name: 'Indian Institute of Information Technology Lucknow',
-      },
-      {
-        '@type': 'EducationalOrganization',
-        name: 'Dibrugarh University',
-      },
-    ],
-    sameAs: [
-      'https://github.com/dibkb',
-      'https://twitter.com/dkborborah',
-      'https://www.linkedin.com/in/dibkb',
-      'https://www.instagram.com/dib.kb',
-    ],
+    alumniOf: EDUCATION.map((education) => ({
+      '@type': 'EducationalOrganization',
+      name: education.school,
+    })),
+    sameAs: SOCIAL_LINKS.filter((link) => link.label !== 'Resume pdf').map(
+      (link) => link.link,
+    ),
     knowsAbout: [
       'Full Stack Development',
       'Artificial Intelligence',

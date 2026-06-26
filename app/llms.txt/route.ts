@@ -1,5 +1,5 @@
 import { WEBSITE_URL } from '@/lib/constants'
-import { PROJECTS, WORK_EXPERIENCE, EDUCATION, EMAIL } from '../data'
+import { PROJECTS, WORK_EXPERIENCE, EDUCATION, EMAIL, SOCIAL_LINKS } from '../data'
 
 export async function GET() {
   function projectBlogUrl(blog: string) {
@@ -13,9 +13,9 @@ export async function GET() {
 ## Contact
 - Website: ${WEBSITE_URL}
 - Email: ${EMAIL}
-- GitHub: https://github.com/dibkb
-- LinkedIn: https://www.linkedin.com/in/dibkb
-- Twitter: https://twitter.com/dkborborah
+${SOCIAL_LINKS.filter((link) => link.label !== 'Resume pdf')
+  .map((link) => `- ${link.label}: ${link.link}`)
+  .join('\n')}
 
 ## Current Role
 ${WORK_EXPERIENCE[0].title} at ${WORK_EXPERIENCE[0].company}
