@@ -68,7 +68,7 @@ export const PROJECTS: Project[] = [
       'AI hiring assistant that extracts structured resume facts, answers candidate questions and grounding',
     link: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
     video:
-      'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Amazon+Excel+Demo.mp4',
+      'https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/portfolio-demo/ai-resume-chat/ai-resume-chat.mp4',
     id: 'project-resume-assistant',
   },
   {
@@ -78,7 +78,7 @@ export const PROJECTS: Project[] = [
       'Bun TypeScript voice CLI that streams microphone audio to Gemini Live with local VAD and speaker playback',
     link: 'https://github.com/RutamBhagat/ringg',
     video:
-      'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/cinema-lens.mp4',
+      'https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/portfolio-demo/realtime-voice-chat/realtime-voice-chat.mp4',
     id: 'project-ringg',
   },
 ]
