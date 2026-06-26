@@ -17,13 +17,6 @@ export type WorkExperience = {
   details: string[]
 }
 
-type BlogPost = {
-  title: string
-  description: string
-  link: string
-  uid: string
-}
-
 type SocialLink = {
   label: string
   link: string
@@ -36,197 +29,150 @@ export type Education = {
   end: string
   cgpa: number
 }
+
 export const PROJECTS: Project[] = [
   {
-    name: 'Query X ',
-    blog: 'blog/query-x',
-    description: 'Perplexity Clone.',
-    link: 'https://query.borborah.xyz',
+    name: 'Agent Console Alchemyst',
+    blog: 'https://github.com/RutamBhagat/agent-console-alchemyst',
+    description:
+      'Next.js agent console with WebSocket streaming, tool-call rendering, trace timelines, and context diff inspection',
+    link: 'https://github.com/RutamBhagat/agent-console-alchemyst',
     video:
       'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/query-x-demo.mp4',
-    id: 'project212',
+    id: 'project-agent-console',
   },
   {
-    name: 'Tesseract AI Code Editor',
-    blog: 'blog/tesseract-editor-working',
+    name: 'arXiv7 LangGraph',
+    blog: 'https://github.com/RutamBhagat/Langgraph-arXiv',
     description:
-      'Turn screenshots into editable html/css/js with powerful AI code editor',
-    link: 'https://tesseract.borborah.xyz',
+      'Agentic RAG system for arXiv papers using LangGraph, scoped hybrid retrieval, LangSmith tracing, and eval workflows',
+    link: 'https://github.com/RutamBhagat/Langgraph-arXiv',
     video:
       'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Tesss+Web+Video.mp4',
-    id: 'project21',
+    id: 'project-arxiv7',
   },
   {
-    name: 'BroTube - Youtube on steroids',
-    blog: 'blog/bro-tube',
+    name: 'Google Meet SFU',
+    blog: 'https://github.com/RutamBhagat/google-meet-sfu',
     description:
-      'Chat with Youtube videos, get sentiments of comments, and more',
-    link: 'https://brotube.borborah.xyz/',
+      'WebRTC video-room prototype with mediasoup SFU, Elysia signaling, FFmpeg-composited HLS output, and React stream/watch views',
+    link: 'https://github.com/RutamBhagat/google-meet-sfu',
     video:
       'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/brotube.mp4',
-    id: 'project443',
+    id: 'project-google-meet-sfu',
   },
   {
-    name: 'Amazon SWOT AI Optimizer',
-    blog: 'blog/excel-ai',
+    name: 'Intelligent Resume Assistant',
+    blog: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
     description:
-      'Analyze reviews, run A/B tests, and improve Amazon listings with AI-powered insights',
-    link: 'https://excel.borborah.xyz/',
+      'AI hiring assistant that extracts structured resume facts, answers candidate questions, and refuses to fabricate missing data',
+    link: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
     video:
       'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Amazon+Excel+Demo.mp4',
-    id: 'project2',
+    id: 'project-resume-assistant',
   },
   {
-    name: 'Cinema Lens',
-    blog: 'blog/cinema-lens-working',
+    name: 'ringg',
+    blog: 'https://github.com/RutamBhagat/ringg',
     description:
-      'Agentic AI movie recommender chatbot using graphs, semantics, web.',
-    link: 'https://cinema.borborah.xyz/',
+      'Bun TypeScript voice CLI that streams microphone audio to Gemini Live with local VAD and speaker playback',
+    link: 'https://github.com/RutamBhagat/ringg',
     video:
       'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/cinema-lens.mp4',
-    id: 'project1',
-  },
-  {
-    name: 'LLM Browser Automation',
-    blog: 'blog/browser-automation',
-    description:
-      'Automate simple tasks with a browser automation chatbot agent',
-    link: 'https://github.com/dibkb/moonshot',
-    video:
-      'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Automation+Video.mp4',
-    id: 'project4',
+    id: 'project-ringg',
   },
 ]
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Mavic AI',
-    title: 'Full Stack Engineer',
-    start: 'November 2025',
-    end: 'Present',
+    company: 'Fermion',
+    title: 'Software Development Engineer 2',
+    start: 'August 2025',
+    end: 'October 2025',
     link: 'https://www.mavic.ai/',
     id: 'work00',
     details: [
-      'Built an internal LLM evaluation dashboard using Promptfoo, enabling prompt engineers to test model outputs against real user queries',
-      'Designed an agent-driven prompt optimization pipeline that auto-improves and versions prompts based on evaluation scores',
-      'Implemented a Stripe-backed credit ledger system for auditability, tracking deposits, cancellations, and usage-based deductions',
+      'Reworked the PostgreSQL/PgBouncer connection path so the backend no longer depended on one PgBouncer VM, using multiple endpoints, separate pools, endpoint rotation, circuit breakers, and bounded retries',
+      'Moved VM-hosted Node workers from manual screen sessions to systemd, adding crash restarts, reboot survival, standard status/log tooling, and blue/green deploys where the new version starts before the old one drains',
+      'Fixed Stripe checkout amount conversion for zero-decimal currencies such as JPY, KRW, and VND by applying currency-specific integer minor units instead of treating every currency like USD cents',
+      'Made production crashes easier to debug by moving service logs to journald, adding retention limits to protect disk space, and enabling Node diagnostic reports for fatal errors, uncaught exceptions, and shutdown signals',
     ],
   },
   {
-    company: 'Roger AI (YC W24)',
-    title: 'Founding Engineer',
-    start: 'June 2025',
-    end: 'October 2025',
+    company: 'HireRoger (YC Summer 2024)',
+    title: 'Founding Engineer (Contract)',
+    start: 'January 2025',
+    end: 'June 2025',
     link: 'https://www.hireroger.com/',
     id: 'work01',
     details: [
-      'Engineered a sophisticated lead generation tool leveraging Chrome extension architecture and agentic AI workflows',
+      'Built backend workflows for an AI SDR/CRM product: campaign setup, ICP filters, mailbox/LinkedIn account connection, lead research, draft approval, scheduling, and automated sending',
+      'Designed the campaign orchestration layer that turned user inputs into outreach plans, generated drafts, activation jobs, send schedules, and daily execution tasks across email and LinkedIn',
+      "Built LLM personalization flows using reusable templates, research instructions, per-lead context, and fixed sequence structure, so generated messages stayed consistent while still referencing each prospect's company and role",
+      'Shipped lead sourcing and enrichment workflows that combined CSV imports, scraped websites, LinkedIn data, email discovery, ICP filters, and Typesense fuzzy search to find, rank, enrich, and save qualified prospects into campaigns',
+      'Engineered a sophisticated lead generation tool using Chrome extension architecture and agentic AI workflows',
       'Architected a custom multi-agent AI system achieving 62% performance improvement: reduced response time from 60s to 23s compared to GPT-research-tool',
-      'Made internal dashbaords for tracking client leads and sales',
+      'Built internal dashboards for tracking client leads and sales',
     ],
   },
   {
-    company: 'Interface Labs',
-    title: 'Full Stack Engineer (Intern)',
-    start: 'August 2024',
-    end: 'May 2025',
+    company: 'Nordstone, UK',
+    title: 'Fullstack Developer (Contract)',
+    start: 'July 2023',
+    end: 'December 2024',
     link: 'https://www.getinterface.tech/',
     id: 'work1',
     details: [
-      'Spearheaded development of the entire MVP from scratch — translating Figma designs into a responsive Next.js frontend and building robust FastAPI backend services.',
-      'Integrated Amazon Selling Partner (SP) APIs to automate client reporting workflows; implemented scheduled cron jobs for pulling, processing, and persisting SP API reports.',
-      'Developed a comprehensive dashboard for visualizing and analyzing SP API data, enabling clients to monitor their sales and inventory trends in real-time.',
-      'Delivered production-ready MVPs for early clients like Plum, Mokobara, and Azah, accelerating their onboarding and analytics operations.',
+      'Led frontend work for RateMyStation, an anonymous newsroom review platform, building review feeds, news director search, job-detail cards, category navigation, subscription flows, responsive layouts, and cross-browser fixes',
     ],
   },
   {
-    company: 'Adri AI (YC W23)',
-    title: 'Full Stack Engineer (Contract)',
-    start: 'May 2024',
-    end: 'August 2024',
+    company: 'Intelliconnect Systems',
+    title: 'Fullstack Developer Intern',
+    start: 'December 2022',
+    end: 'January 2023',
     link: 'https://www.ycombinator.com/companies/adri-ai',
     id: 'work2',
     details: [
-      'Led the complete redesign and implementation of the company website, enhancing UX/UI consistency and performance.',
-      'Developed internal tools and dashboards; integrated LLM-powered APIs with a responsive, dynamic frontend stack.',
-      'Designed and tested prompt engineering strategies to improve LLM outputs across use cases like summarization, Q&A, and content generation.',
-    ],
-  },
-  {
-    company: 'StockInsights',
-    title: 'Frontend Engineer (Intern)',
-    start: 'April 2023',
-    end: 'June 2023',
-    link: 'https://www.stockinsights.ai/',
-    id: 'work3',
-    details: [
-      'Developed the MVP from Figma to production using React, integrating backend APIs and user-role based views for secure access control.',
-      'Implemented LangChain-powered streaming UI and pagination to enhance UX across data-heavy screens.',
+      'Built a Next.js 13 suit-customization frontend and connected product options, customization state, cart, and checkout flows to Shopify',
     ],
   },
 ]
 
-export const BLOG_POSTS: BlogPost[] = [
-  {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-1',
-  },
-  {
-    title: 'Why I left my job to start my own company',
-    description:
-      'A deep dive into my decision to leave my job and start my own company',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-2',
-  },
-  {
-    title: 'What I learned from my first year of freelancing',
-    description:
-      'A look back at my first year of freelancing and what I learned',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
-    uid: 'blog-3',
-  },
-]
 export const EDUCATION: Education[] = [
   {
-    school: 'Indian Institute of Information Technology Lucknow',
-    degree:
-      'Master of Science (Msc) Machine Learning and Artificial Intelligence',
-    start: 'August 2023',
-    end: '2025',
-    cgpa: 9.09,
+    school: 'SKNCOE',
+    degree: 'Bachelor of Engineering',
+    start: 'August 2019',
+    end: '2022',
+    cgpa: 9.1,
   },
   {
-    school: 'Dibrugarh University ',
-    degree: 'Bachelor of Science (Bsc Honors) Mathematics ',
-    start: 'June 2019',
-    end: 'May 2022',
-    cgpa: 8.82,
+    school: 'Govt. Polytechnic Malvan',
+    degree: 'Diploma',
+    start: 'June 2016',
+    end: 'May 2019',
+    cgpa: 8.52,
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/dibkb',
+    link: 'https://github.com/RutamBhagat/',
   },
   {
     label: 'Twitter',
-    link: 'https://twitter.com/fromdibas',
+    link: 'https://x.com/rutamstwt',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/dibkb',
-  },
-  {
-    label: 'Instagram',
-    link: 'https://www.instagram.com/dib.kb',
+    link: 'https://www.linkedin.com/in/rutam-bhagat/',
   },
   {
     label: 'Resume pdf',
-    link: 'https://dibas.borborah.xyz/resume.pdf',
+    link: 'https://rutam.vercel.app/resume.pdf',
   },
 ]
 
-export const EMAIL = 'dibas9110@gmail.com'
+export const EMAIL = 'rutambhagat@gmail.com'

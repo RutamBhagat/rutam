@@ -8,7 +8,7 @@ export async function GET() {
     name_for_model: 'dibas_portfolio',
     description_for_human: SITE_DESCRIPTION,
     description_for_model:
-      'Portfolio website of Dibas K Borborah, a Full Stack Engineer specializing in AI/ML. Contains information about projects, work experience, education, and blog posts about AI-powered applications.',
+      'Portfolio website of Rutam Bhagat, a Full Stack Engineer specializing in AI/ML. Contains information about projects, work experience, education, and blog posts about AI-powered applications.',
     auth: {
       type: 'none',
     },

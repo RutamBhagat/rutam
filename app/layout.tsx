@@ -92,7 +92,7 @@ function PersonJsonLd() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Dibas K Borborah',
+    name: 'Rutam Bhagat',
     url: WEBSITE_URL,
     image: `${WEBSITE_URL}/opengraph-image`,
     jobTitle: 'Full Stack Engineer',
@@ -147,7 +147,7 @@ function WebsiteJsonLd() {
     description: SITE_DESCRIPTION,
     author: {
       '@type': 'Person',
-      name: 'Dibas K Borborah',
+      name: 'Rutam Bhagat',
     },
   }
 

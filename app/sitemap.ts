@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog posts from projects
   const blogPosts: MetadataRoute.Sitemap = PROJECTS.filter(
-    (project) => project.blog
+    (project) => project.blog && !project.blog.startsWith('http'),
   ).map((project) => ({
     url: `${WEBSITE_URL}/${project.blog}`,
     lastModified: currentDate,

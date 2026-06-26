@@ -58,12 +58,12 @@ function ArticleJsonLd({ slug }: { slug: string }) {
     image: `${WEBSITE_URL}/blog/${slug}/opengraph-image`,
     author: {
       '@type': 'Person',
-      name: 'Dibas K Borborah',
+      name: 'Rutam Bhagat',
       url: WEBSITE_URL,
     },
     publisher: {
       '@type': 'Person',
-      name: 'Dibas K Borborah',
+      name: 'Rutam Bhagat',
       url: WEBSITE_URL,
     },
     mainEntityOfPage: {

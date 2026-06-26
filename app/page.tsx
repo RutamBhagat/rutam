@@ -139,20 +139,21 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Versatile full stack engineer currently pursuing a Master's in AI
-            and ML, with hands-on experience in fast-paced startup environments.
-            I'm passionate about building scalable web applications and diving
-            deep into the world of LLM agents and intelligent systems.
+            Backend AI Engineer with experience building production-grade
+            backend systems, LLM-powered workflows, agentic applications, and
+            reliability-focused infrastructure.
             <br />
             <br />
-            I thrive in dynamic, collaborative teams and love solving complex
-            problems across the stack — from frontend finesse to backend logic.
+            I work best at the intersection of backend engineering, AI product
+            development, and systems that need to move beyond prototypes into
+            dependable production software. My experience includes AI SDR/CRM
+            automation, lead enrichment, campaign orchestration, billing
+            workflows, real-time communication, document extraction, and
+            RAG-based research systems.
             <br />
-            <br />
-            When I'm not immersed in code, you'll catch me racing in Forza,
-            living out my cowboy fantasies in Red Dead Redemption 2, or staying
-            active with badminton, cardio, and swimming. Work hard, play harder
-            (and occasionally rob trains). 🤠🐴🙌
+            <br />I am currently targeting AI Engineer, Backend Engineer,
+            Software Engineer - AI Products, Backend Platform Engineer, and
+            full-stack roles with strong backend/AI ownership.
           </p>
         </div>
       </motion.section>

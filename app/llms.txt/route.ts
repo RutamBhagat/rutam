@@ -2,7 +2,11 @@ import { WEBSITE_URL } from '@/lib/constants'
 import { PROJECTS, WORK_EXPERIENCE, EDUCATION, EMAIL } from '../data'
 
 export async function GET() {
-  const content = `# Dibas K Borborah
+  function projectBlogUrl(blog: string) {
+    return blog.startsWith('http') ? blog : `${WEBSITE_URL}/${blog}`
+  }
+
+  const content = `# Rutam Bhagat
 
 > Full Stack Engineer specializing in AI/ML, building production-ready applications with Next.js, React, and modern web technologies.
 
@@ -26,8 +30,8 @@ ${PROJECTS.map(
   (project) => `### ${project.name}
 ${project.description}
 - Live: ${project.link}
-- Blog: ${WEBSITE_URL}/${project.blog}
-`
+- Blog: ${projectBlogUrl(project.blog)}
+`,
 ).join('\n')}
 
 ## Work Experience
@@ -36,7 +40,7 @@ ${WORK_EXPERIENCE.map(
   (work) => `### ${work.company} - ${work.title}
 ${work.start} - ${work.end}
 ${work.details.map((d) => `- ${d}`).join('\n')}
-`
+`,
 ).join('\n')}
 
 ## Technical Skills
