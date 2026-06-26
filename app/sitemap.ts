@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${WEBSITE_URL}/resume.pdf`,
+      url: `https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/resume/Rutam_Bhagat_Resume.pdf`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.5,
