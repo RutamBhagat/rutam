@@ -32,40 +32,40 @@ export type Education = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Agent Console Alchemyst',
-    blog: 'https://github.com/RutamBhagat/agent-console-alchemyst',
+    name: 'Google Meet SFU',
+    blog: 'https://github.com/RutamBhagat/google-meet-sfu',
     description:
-      'Next.js agent console with WebSocket streaming, tool-call rendering, trace timelines, and context diff inspection',
-    link: 'https://github.com/RutamBhagat/agent-console-alchemyst',
+      'Google Meet Clone with WebRTC, mediasoup SFU and FFmpeg HLS output',
+    link: 'https://github.com/RutamBhagat/google-meet-sfu',
     video:
-      'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/query-x-demo.mp4',
-    id: 'project-agent-console',
+      'https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/portfolio-demo/google-meet-sfu/google-meet-sfu.mp4',
+    id: 'project-google-meet-sfu',
   },
   {
     name: 'arXiv7 LangGraph',
     blog: 'https://github.com/RutamBhagat/Langgraph-arXiv',
     description:
-      'Agentic RAG system for arXiv papers using LangGraph, scoped hybrid retrieval, LangSmith tracing, and eval workflows',
+      'Context7 clone for arXiv papers using LangGraph, scoped and hybrid retrieval, LangSmith tracing, and eval workflows',
     link: 'https://github.com/RutamBhagat/Langgraph-arXiv',
     video:
-      'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Tesss+Web+Video.mp4',
+      'https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/portfolio-demo/arxiv7-langgraph/arxiv7-langgraph.mp4',
     id: 'project-arxiv7',
   },
   {
-    name: 'Google Meet SFU',
-    blog: 'https://github.com/RutamBhagat/google-meet-sfu',
+    name: 'Agent Console Alchemyst',
+    blog: 'https://github.com/RutamBhagat/agent-console-alchemyst',
     description:
-      'WebRTC video-room prototype with mediasoup SFU, Elysia signaling, FFmpeg-composited HLS output, and React stream/watch views',
-    link: 'https://github.com/RutamBhagat/google-meet-sfu',
+      'Next.js agentic frontend with WebSocket streaming, tool-call rendering, trace timelines, and context diff inspection',
+    link: 'https://github.com/RutamBhagat/agent-console-alchemyst',
     video:
-      'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/brotube.mp4',
-    id: 'project-google-meet-sfu',
+      'https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/portfolio-demo/alchemyst-agent-console/alchemyst-agent-console.mp4',
+    id: 'project-agent-console',
   },
   {
     name: 'Intelligent Resume Assistant',
     blog: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
     description:
-      'AI hiring assistant that extracts structured resume facts, answers candidate questions, and refuses to fabricate missing data',
+      'AI hiring assistant that extracts structured resume facts, answers candidate questions and grounding',
     link: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
     video:
       'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Amazon+Excel+Demo.mp4',
