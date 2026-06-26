@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPosts: MetadataRoute.Sitemap = PROJECTS.filter(
     (project) => project.blog && !project.blog.startsWith('http'),
   ).map((project) => ({
-    url: `${WEBSITE_URL}/${project.blog}`,
+    url: `${WEBSITE_URL}${project.blog}`,
     lastModified: currentDate,
     changeFrequency: 'monthly' as const,
     priority: 0.8,

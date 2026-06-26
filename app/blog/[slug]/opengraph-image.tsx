@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og'
-import { BLOG_SEO_DATA } from '@/lib/seo'
+import { getProjectBySlug } from '@/lib/seo'
 
 export const runtime = 'edge'
 export const alt = 'Blog Post'
@@ -15,10 +15,10 @@ export default async function Image({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const seoData = BLOG_SEO_DATA[slug]
+  const project = getProjectBySlug(slug)
 
-  const title = seoData?.title || 'Blog Post'
-  const description = seoData?.description || ''
+  const title = project?.name || 'Blog Post'
+  const description = project?.description || ''
 
   return new ImageResponse(
     <div

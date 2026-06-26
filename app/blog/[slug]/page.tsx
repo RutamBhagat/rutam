@@ -1,59 +1,75 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { generateBlogMetadata, BLOG_SEO_DATA } from '@/lib/seo'
+import {
+  Children,
+  isValidElement,
+  type ReactElement,
+  type ReactNode,
+} from 'react'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
+import { MermaidDiagram } from '@/components/mermaid-diagram'
 import { WEBSITE_URL } from '@/lib/constants'
-
-// Import all MDX content from content directory
-import QueryX from '@/content/blog/query-x.mdx'
-import TesseractEditor from '@/content/blog/tesseract-editor-working.mdx'
-import BroTube from '@/content/blog/bro-tube.mdx'
-import CinemaLens from '@/content/blog/cinema-lens-working.mdx'
-import ExcelAi from '@/content/blog/excel-ai.mdx'
-import BrowserAutomation from '@/content/blog/browser-automation.mdx'
-
-const BLOG_COMPONENTS: Record<string, React.ComponentType> = {
-  'query-x': QueryX,
-  'tesseract-editor-working': TesseractEditor,
-  'bro-tube': BroTube,
-  'cinema-lens-working': CinemaLens,
-  'excel-ai': ExcelAi,
-  'browser-automation': BrowserAutomation,
-}
+import {
+  generateBlogMetadata,
+  getProjectBySlug,
+  getProjectSlug,
+} from '@/lib/seo'
+import { PROJECTS } from '@/app/data'
 
 type Props = {
   params: Promise<{ slug: string }>
 }
 
+type CodeElementProps = {
+  className?: string
+  children?: ReactNode
+}
+
+function isMermaidCode(
+  node: ReactNode,
+): node is ReactElement<CodeElementProps> {
+  return (
+    isValidElement<CodeElementProps>(node) &&
+    typeof node.props.className === 'string' &&
+    node.props.className.split(/\s+/).includes('language-mermaid')
+  )
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const seoData = BLOG_SEO_DATA[slug]
+  const project = getProjectBySlug(slug)
 
-  if (!seoData) {
+  if (!project) {
     return {
       title: 'Blog Post Not Found',
     }
   }
 
   return generateBlogMetadata({
-    title: seoData.title,
-    description: seoData.description,
+    title: project.name,
+    description: project.description,
     slug,
   })
 }
 
 export function generateStaticParams() {
-  return Object.keys(BLOG_SEO_DATA).map((slug) => ({ slug }))
+  return PROJECTS.map((project) => ({ slug: getProjectSlug(project.blog) }))
 }
 
-function ArticleJsonLd({ slug }: { slug: string }) {
-  const seoData = BLOG_SEO_DATA[slug]
-  if (!seoData) return null
-
+function ArticleJsonLd({
+  project,
+  slug,
+}: {
+  project: NonNullable<ReturnType<typeof getProjectBySlug>>
+  slug: string
+}) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: seoData.title,
-    description: seoData.description,
+    headline: project.name,
+    description: project.description,
     url: `${WEBSITE_URL}/blog/${slug}`,
     image: `${WEBSITE_URL}/blog/${slug}/opengraph-image`,
     author: {
@@ -80,18 +96,81 @@ function ArticleJsonLd({ slug }: { slug: string }) {
   )
 }
 
+function resolveUrl(value: string | undefined, base: string) {
+  if (!value || value.startsWith('#')) return value
+  return new URL(value, base).toString()
+}
+
 export default async function BlogPost({ params }: Props) {
   const { slug } = await params
-  const Content = BLOG_COMPONENTS[slug]
+  const project = getProjectBySlug(slug)
 
-  if (!Content) {
+  if (!project) {
     notFound()
   }
 
+  const response = await fetch(project.readme, {
+    next: { revalidate: 3600 },
+  })
+
+  if (!response.ok) {
+    notFound()
+  }
+
+  const markdown = await response.text()
+  const repoTreeUrl = `${project.link}/blob/main/`
+
   return (
     <>
-      <ArticleJsonLd slug={slug} />
-      <Content />
+      <ArticleJsonLd project={project} slug={slug} />
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
+        components={{
+          a({ href, children, node, ...props }) {
+            return (
+              <a
+                {...props}
+                href={resolveUrl(href, repoTreeUrl)}
+                target={href?.startsWith('#') ? undefined : '_blank'}
+                rel={href?.startsWith('#') ? undefined : 'noopener noreferrer'}
+              >
+                {children}
+              </a>
+            )
+          },
+          img({ src, alt, node, ...props }) {
+            return (
+              <img
+                {...props}
+                src={
+                  typeof src === 'string'
+                    ? resolveUrl(src, project.readme)
+                    : undefined
+                }
+                alt={alt ?? ''}
+                loading="lazy"
+              />
+            )
+          },
+          pre({ children, node, ...props }) {
+            const child =
+              Children.count(children) === 1 ? Children.only(children) : null
+
+            if (isMermaidCode(child)) {
+              return (
+                <MermaidDiagram
+                  chart={String(child.props.children).replace(/\n$/, '')}
+                />
+              )
+            }
+
+            return <pre {...props}>{children}</pre>
+          },
+        }}
+      >
+        {markdown}
+      </ReactMarkdown>
     </>
   )
 }

@@ -4,6 +4,7 @@ type Project = {
   link: string
   video: string
   blog: string
+  readme: string
   id: string
 }
 
@@ -33,7 +34,9 @@ export type Education = {
 export const PROJECTS: Project[] = [
   {
     name: 'Google Meet SFU',
-    blog: 'https://github.com/RutamBhagat/google-meet-sfu',
+    blog: '/blog/google-meet-sfu',
+    readme:
+      'https://raw.githubusercontent.com/RutamBhagat/google-meet-sfu/refs/heads/main/README.md',
     description:
       'Google Meet Clone with WebRTC, mediasoup SFU and FFmpeg HLS output',
     link: 'https://github.com/RutamBhagat/google-meet-sfu',
@@ -43,7 +46,9 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'arXiv7 LangGraph',
-    blog: 'https://github.com/RutamBhagat/Langgraph-arXiv',
+    blog: '/blog/arxiv7-langgraph',
+    readme:
+      'https://raw.githubusercontent.com/RutamBhagat/Langgraph-arXiv/refs/heads/main/README.md',
     description:
       'Context7 clone for arXiv papers using LangGraph, scoped and hybrid retrieval, LangSmith tracing, and eval workflows',
     link: 'https://github.com/RutamBhagat/Langgraph-arXiv',
@@ -53,7 +58,9 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Agent Console Alchemyst',
-    blog: 'https://github.com/RutamBhagat/agent-console-alchemyst',
+    blog: '/blog/agent-console-alchemyst',
+    readme:
+      'https://raw.githubusercontent.com/RutamBhagat/agent-console-alchemyst/refs/heads/main/README.md',
     description:
       'Next.js agentic frontend with WebSocket streaming, tool-call rendering, trace timelines, and context diff inspection',
     link: 'https://github.com/RutamBhagat/agent-console-alchemyst',
@@ -63,7 +70,9 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'Intelligent Resume Assistant',
-    blog: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
+    blog: '/blog/intelligent-resume-assistant',
+    readme:
+      'https://raw.githubusercontent.com/RutamBhagat/intelligent-resume-assistant/refs/heads/main/README.md',
     description:
       'AI hiring assistant that extracts structured resume facts, answers candidate questions and grounding',
     link: 'https://github.com/RutamBhagat/intelligent-resume-assistant',
@@ -73,7 +82,9 @@ export const PROJECTS: Project[] = [
   },
   {
     name: 'ringg',
-    blog: 'https://github.com/RutamBhagat/ringg',
+    blog: '/blog/ringg',
+    readme:
+      'https://raw.githubusercontent.com/RutamBhagat/ringg/refs/heads/main/README.md',
     description:
       'Bun TypeScript voice CLI that streams microphone audio to Gemini Live with local VAD and speaker playback',
     link: 'https://github.com/RutamBhagat/ringg',

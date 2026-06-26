@@ -1,9 +1,15 @@
 import { WEBSITE_URL } from '@/lib/constants'
-import { PROJECTS, WORK_EXPERIENCE, EDUCATION, EMAIL, SOCIAL_LINKS } from '../data'
+import {
+  PROJECTS,
+  WORK_EXPERIENCE,
+  EDUCATION,
+  EMAIL,
+  SOCIAL_LINKS,
+} from '../data'
 
 export async function GET() {
   function projectBlogUrl(blog: string) {
-    return blog.startsWith('http') ? blog : `${WEBSITE_URL}/${blog}`
+    return blog.startsWith('http') ? blog : `${WEBSITE_URL}${blog}`
   }
 
   const content = `# Rutam Bhagat
