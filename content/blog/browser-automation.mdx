@@ -1,0 +1,122 @@
+<Video
+  src={
+    'https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Automation+Video.mp4'
+  }
+  title="Demo working preview"
+  caption="Demo working preview"
+  controls={true}
+  autoPlay={true}
+  muted={true}
+  loop={true}
+/>
+
+# 🧠 Browser Automation Agent — Small Steps, Big Promise
+
+Ever wished you had an AI assistant that could browse the internet _for you_?
+
+Meet our **Browser Automation Agent** — a proof-of-concept agent that mimics a human-like browsing experience. It's powered by LLMs and a headless browser, capable of navigating websites, logging in, extracting data, and even comparing prices... all hands-free.
+
+> ⚠️ Not ready to conquer the **Voeger Challenge** just yet... but it's a promising start 😅
+
+---
+
+## 🔗 Project Links
+
+- [GitHub Repository](https://github.com/dibkb/moonshot)
+- [Video Demo](https://dibkb-tesseract-images.s3.ap-south-1.amazonaws.com/website/demo-videos/Automation+Video.mp4)
+
+---
+
+## ⚙️ Tech Stack
+
+Here's a peek into the technologies powering this browser automation agent:
+
+### 🧠 AI Models
+
+- `LLaMA 3.3` — Responsible for parsing user prompts and generating structured step-by-step plans
+- `LangChain` — Powers agent routing, planning, and memory around the LLM
+
+### 🧰 Frameworks & SDKs
+
+- `FastAPI` — Backend framework orchestrating prompt handling, execution, and response streaming
+- `Playwright` — Headless browser automation for navigating, interacting, and scraping real web pages
+- `Chromium` — Browser engine used under the hood by Playwright
+- `WebSockets` — Enables real-time streaming of updates between the agent backend and frontend
+
+### 💻 Code & UI
+
+- `Vite` — Lightning-fast frontend bundler powering the minimal dashboard
+- `Tailwind CSS` — Utility-first styling for rapid UI development
+- `Zustand` — Lightweight global state management for real-time updates
+
+---
+
+🚀 _Together, these tools enable natural language → autonomous browser navigation → structured insights._
+
+---
+
+## 🎬 What Can It Do? (Tested & Demoed)
+
+### ✅ Task 1: Google Flights 🛫
+
+**Prompt**: “Search for Mumbai to Delhi flights”  
+**Goal**: Find and return the cheapest option available.  
+✔️ Successfully parses flight options from search results.
+
+---
+
+### ✅ Task 2: GitHub Login & Dashboard Extraction
+
+**Prompt**: “Login to github.com with username/password and get dashboard data”  
+**Goal**: Perform authorization and fetch user-specific data.  
+✔️ Navigates login flow and scrapes dashboard contents post-auth.
+
+---
+
+### ✅ Task 3: TSLA Stock Check on Yahoo Finance 📉
+
+**Prompt**: “Go to yahoo.finance.com, search TSLA, and fetch stock price report”  
+**Goal**: Retrieve Tesla's real-time stock price and summary.  
+✔️ Successfully extracts key financial metrics.
+
+---
+
+### ✅ Task 4: Amazon India Product Search 🛒
+
+**Prompt**: “Search for 4K monitors on amazon.in and fetch results”  
+**Goal**: Return list of monitors with title, price, and rating.  
+✔️ Handles search input and scrapes top listings from Amazon.
+
+---
+
+### ✅ Task 5: Google > CrustData Website 🧭
+
+**Prompt**: “Search CrustData on Google, visit site, and gather company info”  
+**Goal**: Navigate through Google, land on company site, and extract key data.  
+✔️ Completes multi-step navigation and info extraction.
+
+---
+
+## 🔧 Under the Hood
+
+- All tasks were prompted using plain English.
+- The agent uses a **headless browser** powered by automation scripts and enhanced with **LLM-driven decision making**.
+- Navigation, clicking, form-filling, and scraping are all handled autonomously.
+
+---
+
+Stay tuned — next up, we’ll break down the **working internals**, the stack, how it reacts to DOM changes, and how it could evolve into a full-blown agent for real-world tasks.
+
+## 🛠 Setup Instructions
+
+Want to try it yourself?
+
+👉 **[Check out the GitHub repository for detailed setup & deployment steps](https://github.com/dibkb/moonshot)**
+
+## 🧪 Under the Hood — Core Technicals
+
+The agent is orchestrated using a **FastAPI** backend, which handles incoming natural language prompts and translates them into step-wise browsing plans using **LangChain**. These plans are then executed with **Playwright**, a powerful headless browser automation framework that enables the agent to **navigate, interact with, and extract data from real-world websites** just like a human would.
+
+At the heart of the decision-making lies **LLaMA 3.3**, hosted on **Groq**, which provides ultra-fast reasoning to interpret user goals, generate structured actions (`NAVIGATE`, `INTERACT`, `EXTRACT`), and extract relevant information from raw page content. The browser interacts via actions like `fill`, `click`, or `fill-click`, based on contextual cues and objective-driven parsing. A streaming system continuously relays status updates back to the user, making the whole experience feel live and interactive.
+
+From parsing flights to scraping stock reports, this agent shows what’s possible when **LLMs meet browsers**.
