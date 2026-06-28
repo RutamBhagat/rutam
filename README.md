@@ -21,7 +21,7 @@ Open `http://localhost:3000`.
 
 ## Project Content
 
-Portfolio data lives in `app/data.ts`.
+Portfolio data lives in `app/data`, with projects in `app/data/projects.ts`.
 
 Each project has:
 
