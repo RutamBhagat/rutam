@@ -1,12 +1,21 @@
-type Project = {
+type ProjectBase = {
   name: string
   description: string
   link: string
-  video: string
   blog: string
   readme: string
   id: string
 }
+
+type Project =
+  | (ProjectBase & {
+      video: string
+      image?: never
+    })
+  | (ProjectBase & {
+      image: string
+      video?: never
+    })
 
 export type WorkExperience = {
   company: string
@@ -43,6 +52,18 @@ export const PROJECTS: Project[] = [
     video:
       'https://pub-a07f730072074955abe8d7b846f26a5b.r2.dev/portfolio-demo/google-meet-sfu/google-meet-sfu.mp4',
     id: 'project-google-meet-sfu',
+  },
+  {
+    name: 'Alchemyst DevOps',
+    blog: '/blog/alchemyst-devops',
+    readme:
+      'https://raw.githubusercontent.com/RutamBhagat/alchemyst-devops/refs/heads/main/README.md',
+    description:
+      'Terraform-managed GCP deployment for distributed LLM inference with a public FastAPI gateway, private workers, Docker Compose, health checks, and autoscaling-ready infrastructure',
+    link: 'https://github.com/RutamBhagat/alchemyst-devops',
+    image:
+      'https://github.com/user-attachments/assets/2e4c0d53-70e5-4692-ac28-dc0703ec2e58',
+    id: 'project-alchemyst-devops',
   },
   {
     name: 'arXiv7 LangGraph',

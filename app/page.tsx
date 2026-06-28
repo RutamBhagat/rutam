@@ -1,6 +1,12 @@
 'use client'
+import { useState } from 'react'
 import { motion } from 'motion/react'
-import { ArrowUpRightIcon, MailIcon, XIcon } from 'lucide-react'
+import {
+  ArrowUpRightIcon,
+  ChevronDownIcon,
+  MailIcon,
+  XIcon,
+} from 'lucide-react'
 import { Magnetic } from '@/components/ui/magnetic'
 import {
   MorphingDialog,
@@ -48,6 +54,8 @@ const ROLE_TAGS = [
   'Platform reliability',
 ]
 
+const INITIAL_PROJECT_COUNT = 6
+
 function SectionHeading({
   eyebrow,
   title,
@@ -88,6 +96,7 @@ function ProjectVideo({ src }: ProjectVideoProps) {
           autoPlay
           loop
           muted
+          playsInline
           className="aspect-video w-full cursor-zoom-in rounded-xl"
         />
       </MorphingDialogTrigger>
@@ -97,8 +106,57 @@ function ProjectVideo({ src }: ProjectVideoProps) {
             src={src}
             autoPlay
             loop
-            muted
+            controls
+            playsInline
             className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
+          />
+        </MorphingDialogContent>
+        <MorphingDialogClose
+          className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+          variants={{
+            initial: { opacity: 0 },
+            animate: {
+              opacity: 1,
+              transition: { delay: 0.3, duration: 0.1 },
+            },
+            exit: { opacity: 0, transition: { duration: 0 } },
+          }}
+        >
+          <XIcon className="h-5 w-5 text-zinc-500" />
+        </MorphingDialogClose>
+      </MorphingDialogContainer>
+    </MorphingDialog>
+  )
+}
+
+type ProjectImageProps = {
+  src: string
+  alt: string
+}
+
+function ProjectImage({ src, alt }: ProjectImageProps) {
+  return (
+    <MorphingDialog
+      transition={{
+        type: 'spring',
+        bounce: 0,
+        duration: 0.3,
+      }}
+    >
+      <MorphingDialogTrigger>
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="aspect-video w-full cursor-zoom-in rounded-xl object-cover"
+        />
+      </MorphingDialogTrigger>
+      <MorphingDialogContainer>
+        <MorphingDialogContent className="relative rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+          <img
+            src={src}
+            alt={alt}
+            className="max-h-[70vh] w-full rounded-xl object-contain"
           />
         </MorphingDialogContent>
         <MorphingDialogClose
@@ -154,6 +212,12 @@ function MagneticSocialLink({
 }
 
 export default function Personal() {
+  const [showAllProjects, setShowAllProjects] = useState(false)
+  const visibleProjects = showAllProjects
+    ? PROJECTS
+    : PROJECTS.slice(0, INITIAL_PROJECT_COUNT)
+  const hasMoreProjects = PROJECTS.length > INITIAL_PROJECT_COUNT
+
   return (
     <motion.main
       className="space-y-20 sm:space-y-24"
@@ -212,13 +276,20 @@ export default function Personal() {
       >
         <SectionHeading eyebrow="Proof" title="Selected Projects" />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
+          {visibleProjects.map((project) => (
             <article
               key={project.name + project.id}
               className="group space-y-3"
             >
               <div className="relative rounded-xl bg-zinc-100 p-1 ring-1 ring-zinc-200/70 transition-colors duration-200 ring-inset group-hover:bg-zinc-200/60 dark:bg-zinc-900 dark:ring-zinc-800 dark:group-hover:bg-zinc-800">
-                <ProjectVideo src={project.video} />
+                {project.video !== undefined ? (
+                  <ProjectVideo src={project.video} />
+                ) : (
+                  <ProjectImage
+                    src={project.image}
+                    alt={`${project.name} architecture diagram`}
+                  />
+                )}
               </div>
               <div className="px-1 pb-3">
                 <header className="mb-2 flex items-start justify-between gap-4">
@@ -256,6 +327,18 @@ export default function Personal() {
             </article>
           ))}
         </div>
+        {hasMoreProjects && !showAllProjects ? (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShowAllProjects(true)}
+              className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors duration-200 hover:border-zinc-300 hover:bg-zinc-50 hover:text-zinc-950 dark:border-zinc-800 dark:text-zinc-300 dark:hover:border-zinc-700 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
+            >
+              Show more
+              <ChevronDownIcon className="h-4 w-4" />
+            </button>
+          </div>
+        ) : null}
       </motion.section>
 
       <motion.section
