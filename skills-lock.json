@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "avoid-ai-writing": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/avoid-ai-writing/SKILL.md",
+      "computedHash": "5212a589cc968ed208d73f36be1871bd60a199b48d8a9945b727044038c1efce"
+    }
+  }
+}
